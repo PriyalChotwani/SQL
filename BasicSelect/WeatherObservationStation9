@@ -1,2 +1,2 @@
-<h3>Query the list of CITY names from STATION that do not start with vowels. Your result cannot contain duplicates.</h3>
+#### Query the list of CITY names from STATION that do not start with vowels. Your result cannot contain duplicates.
 Select distinct(CITY) from STATION where left(CITY,1) not in ('a','e','i','o','u')
