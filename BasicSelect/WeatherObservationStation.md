@@ -33,3 +33,9 @@ D happens to equal the maximum value in Western Longitude (LONG_W in STATION).
 Query the Manhattan Distance between points P1 and P2 and round it to a scale of 4 decimal places.
 
 ```SELECT ROUND(ABS(A-C)+ABS(B-D),4) FROM (SELECT MIN(LAT_N) AS A, MIN(LONG_W) AS B, MAX(LAT_N) AS C, MAX(LONG_W) AS D FROM STATION) AS S```
+
+Consider P1(A,C) and P2(B,D) to be two points on a 2D plane where (A,B) are the respective minimum and maximum values of Northern Latitude (LAT_N) and (C,D) are the respective minimum and maximum values of Western Longitude (LONG_W) in STATION.
+
+Query the Euclidean Distance between points P1 and P2 and format your answer to display 4 decimal digits.
+
+```SELECT FORMAT(SQRT(POWER(B-A, 2)+POWER(D-C,2)),4) FROM (SELECT MIN(LAT_N) AS A, MAX(LAT_N) AS B, MIN(LONG_W) AS C, MAX(LONG_W) AS D FROM STATION) AS S```
